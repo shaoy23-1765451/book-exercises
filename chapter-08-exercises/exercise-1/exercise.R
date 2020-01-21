@@ -11,7 +11,7 @@ meals <- list(breakfast = my_breakfast, lunch = my_lunch)
 
 # Add a "dinner" element to your `meals` list that has what you plan to eat 
 # for dinner
-meals <- c(meals, dinner = c("tomato"))
+meals[["dinner"]] <- c("tomato", "cucumber")
 
 # Use dollar notation to extract your `dinner` element from your list
 # and save it in a vector called 'dinner'
@@ -35,8 +35,8 @@ lapply(meals, length)
 # Write a function `add_pizza` that adds pizza to a given meal vector, and
 # returns the pizza-field vector
 add_pizza <- function(index) {
-  meals[index] <- c(meals[index], "pizza")
-  return(meals[index])
+  meals[[index]] <- c(meals[[index]], "pizza")
+  return(meals[[index]])
 }
 
 # Create a vector `better_meals` that is all your meals, but with pizza!
