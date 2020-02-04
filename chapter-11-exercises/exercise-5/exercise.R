@@ -34,4 +34,10 @@ result2 <- flights %>%
 View(airports)
 
 # Which city was flown to with the highest average speed?
-# simlar approaches with the above questions
+flights %>% 
+  group_by(dest) %>% 
+  summarize(
+    ave_speed = mean(distance/air_time, na.rm = TRUE)
+  ) %>% 
+  filter(ave_speed == max(ave_speed, na.rm = TRUE))
+  )
